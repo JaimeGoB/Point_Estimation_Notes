@@ -1,4 +1,5 @@
 # Mathematical-Statistics-Notes
+These notes were made by me using LaTex. They summarize most important theorems and definitions throughout the course.
 
 ## Unbiased Estimator
 <p>
