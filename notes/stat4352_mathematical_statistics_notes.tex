@@ -142,7 +142,7 @@ The efficiency(gain) is reduced as sample size ${n\to\infty}$. For huge sample s
 
 
 \newpage
-\section{Chapter 10.4- Consistency}
+\section{Chapter 10.4 - Consistency}
 \Large\textbf{Definition: Consistency}
 \\
 \Large If $\hat\theta$ is an estimator of $\theta$ based on a random sample of size n, we say that $\hat\theta$ is \textbf{\textit{consistent (closed)}} for $\theta$, if $\epsilon > 0$:   
@@ -163,7 +163,7 @@ The efficiency(gain) is reduced as sample size ${n\to\infty}$. For huge sample s
 
 
 \newpage
-\section{Chapter 10.5- Sufficiency}
+\section{Chapter 10.5 - Sufficiency}
 \Large\textbf{Definition: Sufficient Principle}
 \begin{itemize}
 	\item Reduce data without loosing information about $\theta$.
@@ -202,7 +202,7 @@ The statistic $\hat\theta$ is a sufficient estimator of the parameter $\theta$ \
 \end{itemize}
 
 \newpage
-\section{Chapter 10.8- Method of Maximum Likelihood}
+\section{Chapter 10.8 - Method of Maximum Likelihood}
 \Large\textbf{Notation}
 \newline X = ( X$_1$,X$_2$,...X$_n$ )  $\stackrel{i.i.d.}{\sim}$ f$_\theta$(x)  \newline Data before observed - r.v.'s with same distribution.
 \newline
@@ -230,13 +230,13 @@ The statistic $\hat\theta$ is a sufficient estimator of the parameter $\theta$ \
 	\item First Derivative: $\dfrac{\partial\mathcal{L}(\theta)  }{\partial\theta} \implies$ Critical Points (Max/Min)
 	\item Second Derivative: $\dfrac{\partial^2\mathcal{L}(\theta)  }{\partial\theta^2} < $ 0 $\implies$  Maximum exits.\newline
 \end{itemize}
-\Large\textbf{Log-Likelihood Function $\log\mathcal{L}$($\theta$)/$\ln\mathcal{L}$($\theta$)}
-\newline Because log/ln is a monotone function, if we \textbf{\textit{maximize log-Likelihood it is the same as maximizing Likelihood.} } The reason why  because \ul{$\log\mathcal{L}$($\theta$)/$\ln\mathcal{L}$($\theta$) is used because taking the derivative is much easier.}
+\Large\textbf{Log-Likelihood Function log$\mathcal{L}$($\theta$)/ln$\mathcal{L}$($\theta$)}
+\newline Because log/ln is a monotone function, if we \textbf{\textit{maximize log-Likelihood it is the same as maximizing Likelihood.} } The reason why  because \ul{$\log\mathcal{L}$($\theta$)/$\ln\mathcal{L}$($\theta$) is used because taking the derivative is much easier.} When referring to log we mean log$_e$ = ln.
 \begin{itemize}
 	\item $\log(ab)$ = $\log(a)$ + $\log(b)$
 	\newline Ex: $f(x) = \displaystyle\prod_{n=1}^{n}g(x) \implies \ln{f(x)} =  \sum_{n=1}^{n} \ln g(x)$ 
-	 \newline You go from taking derivatives of a product rule to taking derivatives of the sum of  individual elements.
 \end{itemize}
+This property applies to both log/ln.\textbf{\textit{The inner product can be expressed as a sum of individual elements.}} This comes super handy when taking derivatives.
 
 \newpage
 \Large\textbf{Properties of a Maximum Likelihood Estimator}
