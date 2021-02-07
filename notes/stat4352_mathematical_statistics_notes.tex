@@ -1,0 +1,265 @@
+\documentclass[]{article}
+
+%opening
+\Huge\title{STAT 4352 - Mathematical Statistics Notes}
+\Large\author{JaimeGoB}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{physics}
+\usepackage{amsmath}
+\usepackage{centernot}
+\usepackage{soul}
+\setul{}{1pt}
+
+\begin{document}
+
+\maketitle
+
+\newpage
+\Huge\section{Chapter 10.2 - Unbiased Estimators}
+
+\Large\textbf{Definition: 10.2 Unbiased Estimator}
+\\
+A statistic $\hat\theta$ is an \textbf{\textit{Unbiased Estimator}} of parameter $\theta$ if and only if:\newline
+\Large\rule{5cm}{0pt} E[$\hat\theta$] = $\theta$\newline
+That is $\hat\theta$ on average its value equals $\theta$.
+\newline
+\newline
+\newline
+\Large\textbf{Definition: Bias}
+\\
+\Large\textbf{\textit{Bias}}  of $\hat\theta$: b$_n$($\hat\theta$) = E[$\hat\theta$]$ - \theta$\newline
+When:\newline
+\Large\rule{2.3cm}{0pt} b$_n$($\hat\theta$) =  E[$\hat\theta$]$ - \theta$ = 0 \textbf{(Unbiased Estimator)}\newline
+\Large\rule{2.3cm}{0pt} b$_n$($\hat\theta$) =  E[$\hat\theta$]$ - \theta$ $\neq$ 0 \textbf{(Biased Estimator)}
+\newline
+\newline
+\newline
+\Large\textbf{Definition: Asymptotically Unbiased Estimator}
+\\
+\Large Based on a random sample n, from a given distribution. We say $\hat\theta$ is a \textbf{\textit{Asymptotically Unbiased Estimator}}  if and only if: \newline
+ \[ \lim_{n\to\infty} b_n(\hat\theta) = 0\] 
+\newline
+\newline
+\Large\textbf{Properties of Unbiased Estimators}
+\begin{itemize}
+	\item $\overline{x}$ is always unbiased for all distributions.
+	\item  NOT UNIQUE. (there can be multiple unbiased estimators).
+	\newline\Large\rule{1cm}{0pt} \textbf{\textit{If you can have multiple unbiased estimators which one is best?}}
+	\newline\Large\rule{1cm}{0pt} Next desireable properties are sufficiency and low variance.	
+	\item Does not have invariance property.
+	\newline\Large\rule{1cm}{0pt} $\overline{x}$ is unbiased for $\mu$ $ \centernot\implies  $ $\overline{x}^2$ is unbiased for $\mu^2$
+\end{itemize}
+
+
+\newpage
+\section{Chapter 10.3 - Efficiency}
+\Large\textbf{\textit{How to measure accuracy of estimators?}}\newline
+\\
+\Large\textbf{1) Mean Absolute Error (MAE)}
+\\
+MAE$_\theta$ = E[ $|\hat\theta - \theta|$ ]
+\newline
+\newline
+\Large\textbf{2) Mean Absolute Deviation (MAD)}
+\\
+MAD$_\theta$ = median[ $|\hat\theta - \theta|$ ]
+\newline
+\newline
+\Large\textbf{3) Mean Squared Error (MSE)}
+\\
+MSE$_\theta$ = E$(\hat\theta - \theta)^2$ = Var$_\theta (\hat\theta)$ + Bias$_\theta ^2 (\hat\theta)$ \newline
+\newline
+\textbf{\textit{For an unbiased estimator (Bias = 0)}} \newline
+MSE$_\theta$  = Var$_\theta (\hat\theta)$
+\newline
+\newline
+\newline
+\newline
+\Large\textbf{Definition: Relative Efficiency}
+\\
+\Large Let $\hat\theta_1$ and $\hat\theta_2$ be unbiased estimators of $\theta$.
+\newline
+\newline
+\Large\rule{3cm}{0pt} If \Large\rule{.3cm}{0pt}$\dfrac{  Var_\theta (\hat\theta_1)  }{ Var_\theta (\hat\theta_2)}  < $  1
+\newline 
+\newline
+\textbf{\textit{We can say that $\hat\theta_1$ is more efficient than $\hat\theta_2$.}}
+\newline 
+You would want to pick the estimator $\hat\theta$ that is more efficient (lowest variance). 
+\newline
+\newline
+\newline
+\textbf{Efficiency Example 1:}  If \Large\rule{.3cm}{0pt}$\dfrac{  Var_\theta (\hat\theta_1)  }{ Var_\theta (\hat\theta_2)}  = $  0.50 $\Longrightarrow  Var_\theta (\hat\theta_1) = 0.5  Var_\theta (\hat\theta_2) $ 
+\newline\newline\Large\rule{10cm}{0pt}  $\hat\theta_1$ is 50\% \textbf{MORE} efficient than $\hat\theta_2$
+\newline
+\newline
+\textbf{Efficiency Example 2:}  If \Large\rule{.3cm}{0pt}$\dfrac{  Var_\theta (\hat\theta_1)  }{ Var_\theta (\hat\theta_2)}  = $  1.50 $\Longrightarrow  Var_\theta (\hat\theta_1) = 1.5  Var_\theta (\hat\theta_2) $ 
+\newline\newline\Large\rule{10cm}{0pt}  $\hat\theta_1$ is 50\% \textbf{LESS} efficient than $\hat\theta_2$
+\newline\Large\rule{13cm}{0pt}   OR
+\newline\Large\rule{10cm}{0pt}  $\hat\theta_2$ is 50\% \textbf{MORE} efficient than $\hat\theta_1$
+\newline
+\newline
+\newline
+\newline
+\Large\textbf{Definition: Asymptotic Relative Efficiency}
+\newline
+\Large Based on a random sample n, from a given distribution. We define the comparison of estimators ($\hat\theta_1$,$\hat\theta_2$) is \textbf{\textit{Asymptotically Relative Efficiency}}  when: \newline
+\[ ARE = \lim_{n\to\infty}  \dfrac{  Var_\theta (\hat\theta_1)  }{ Var_\theta (\hat\theta_2)}  <  1 \] 
+The efficiency(gain) is reduced as sample size ${n\to\infty}$. For huge sample sizes both unbiased estimators are equally good. For small n one estimator is better than other.
+\newline
+\newline
+\Large\textbf{Definition: Uniformly Minimum Variance Unbiased Estimator}
+\newline
+\Large An unbiased estimator $\hat\theta$ is \textbf{\textit{Uniformly Minimum Variance Unbiased Estimator (UMVUE)}} for $\theta$ if it has the smallest variance in the class of all unbiased estimators for $\theta$.
+\newline
+\newline
+\Large\textbf{Theorem 10.2: Cramer-Rao Inequality}
+\newline
+\Large It is possible to obtain a lower bound on the variance of all \textbf{\textit{unbiased estimators}} $\theta$.
+\begin{itemize}
+	\item $\hat\theta$ be a unbiased estimator 
+	\item f(x, $\theta$) is the probability distribution of random variable x.
+	\item n is a random sample size
+\end{itemize}
+\Large The \textbf{\textit{Lower Bound of Variance of an Unbiased Estimator}} is the defined by the Cramer-Rao inequality:
+\newline
+\newline\Large\rule{3cm}{0pt} $Var (\hat\theta) \geq  \dfrac{  1   }{ I (\theta) }$ \Large\rule{1cm}{0pt} where $I (\theta) = nE \left[\left(  \dfrac{  \partial ln f(x)  }{ \partial\theta }    \right)^2 \right] $ 
+\newline
+\newline
+\newline $I (\theta)$ is the Fisher Information in a random sample of size n and $\dfrac {  \partial ln f(x)  }{ \partial\theta }$ is known as score function. It is the smallest possible value variance can have. 
+\newline
+\newline
+\textbf{\textit{UMVUE exists when:}}
+\newline
+\newline If $Var (\hat\theta) =  \dfrac{  1   }{ I (\theta) }$ It has smallest possible value for variance.
+\newline
+\newline $\Longrightarrow  \hat\theta$ \textbf{\textit{ is UMVU of }} $ \hat\theta$ 
+\newline
+\newline
+\textbf{\textit{UMVUE does not exists when:}}
+\newline
+\newline If $Var (\hat\theta) \neq  \dfrac{  1   }{ I (\theta) }$  \textbf{\textit{You can't say $\hat\theta$ is UMVUE as lower bound is not achievable.}}
+
+
+\newpage
+\section{Chapter 10.4- Consistency}
+\Large\textbf{Definition: Consistency}
+\\
+\Large If $\hat\theta$ is an estimator of $\theta$ based on a random sample of size n, we say that $\hat\theta$ is \textbf{\textit{consistent (closed)}} for $\theta$, if $\epsilon > 0$:   
+\newline \[ \lim_{n\to\infty} P( |  \hat\theta - \theta | < \epsilon) = 1   \Large\rule{2cm}{0pt}  \theta - target parameter,  \hat\theta - estimator \] 
+\Large\rule{9cm}{0pt}  $\epsilon$ - estimator (small distance ex: 0.0001)
+\newline
+\newline 
+\Large\rule{1cm}{0pt}\textbf{\textit{Consistency is an Asymptotic Property:}}
+\newline\Large\rule{1cm}{0pt} Error in estimation using $\hat\theta$ is small 
+\newline\Large\rule{1cm}{0pt} $\hat\theta$ converges in probability to $\theta$
+\newline\Large\rule{1cm}{0pt} When ${n\to\infty}$ we can be practically certain that the error made with a consistent 
+\newline\Large\rule{1cm}{0pt} estimator will be less than any small preassigned positive constant $\epsilon$.
+\newline
+\newline 
+\Large\textbf{Theorem 10.3   }
+\\
+\Large If $\hat\theta$ is an unbiased estimator of the parameter $\theta$ and  Var($\hat\theta$) $\to 0$ Bias($\hat\theta$) $\to 0$ as  ${n\to\infty}$ then $\hat\theta$ is a consistent estimator of $\theta$.
+
+
+\newpage
+\section{Chapter 10.5- Sufficiency}
+\Large\textbf{Definition: Sufficient Principle}
+\begin{itemize}
+	\item Reduce data without loosing information about $\theta$.
+	\item Captures all information about a sample relevant to estimation of $\theta$, that is, if all the knowledge about $\theta$ that can be gained from the individual sample values and their order can just as well be gained from the value of $\hat\theta$ alone. \newline
+\end{itemize}
+\Large\textbf{Definition: Sufficient Estimator}
+\\
+The statistic $\hat\theta$ is a sufficient estimator of parameter $\theta$ of a given distribution \textbf{\textit{iff}} for each value of $\hat\theta$ \ul{\textbf{\textit{the conditional probability distribution or density}}}  of a random sample x$_1$,x$_2$,...x$_n$ given $\hat\theta$ = $\theta$ \ul{\textbf{\textit{is independent of}}} $\theta$. 
+\newline
+\newline Sufficient property from conditional probability distribution or density when $\hat\theta$ = $\theta$:
+\newline 
+\newline\Large\rule{5cm}{0pt}  f( x$_1$,x$_2$,...x$_n$ ; $\hat\theta$) = $\dfrac{   f( x_1,x_2,...x_n , \hat\theta)  }{ g(\hat\theta) }$
+\newline
+\newline Note: \ul{Ratio should not contain $\theta$}  in order to be sufficient estimator of $\theta$
+\newline
+\newline
+\newline
+\Large\textbf{Theorem 10.4: Factorization Theorem}
+\\
+The statistic $\hat\theta$ is a sufficient estimator of the parameter $\theta$ \textbf{\textit{iff}} the joint probability distribution or density of the random sample can be factored so that:
+\newline
+\newline\Large\rule{5cm}{0pt}  f( x$_1$,x$_2$,...x$_n$ ; $\hat\theta$) = $g(\hat\theta, \theta) * h( x_1,x_2,...x_n )  $
+\newline
+\newline where \ul{$g(\hat\theta, \theta)$ depends on $\theta$ and $\hat\theta$}  and \ul{$h( x_1,x_2,...x_n )$ does not depend on $\theta$.} 
+\newline
+\newline \textbf{\textit{Using factorization you want to identify:}}
+\begin{itemize}
+	\item g function $\implies$ function $\theta$
+	\item h function $\implies$ function without $\theta$ \newline (h(x) = 1 if not present)
+\end{itemize}
+\textbf{Properties of Sufficiency:}
+\begin{itemize}
+	\item Complete  data is always sufficient.
+	\item \ul{Any 1-1 function of a sufficient statistic is also sufficient.}
+	\item Good estimators should be functions of sufficient statistic. \newline\textbf{(a good estimator is sufficient)} 
+\end{itemize}
+
+\newpage
+\section{Chapter 10.8- Method of Maximum Likelihood}
+\Large\textbf{Notation}
+\newline X = ( X$_1$,X$_2$,...X$_n$ )  $\stackrel{i.i.d.}{\sim}$ f$_\theta$(x)  \newline Data before observed - r.v.'s with same distribution.
+\newline
+\newline $\theta$ may be a vector, $\theta \in \Theta$
+\newline
+\newline $\Theta$ is parameter space. 
+\newline Ex: parameter space of $\mathcal{N}(\mu,\,\sigma^{2})$ is $-\infty < \mu < \infty$, $-\infty < \sigma^2 < \infty$,
+\newline
+\newline x = (x$_1$,x$_2$,...x$_n$ )   Data that has been observed.
+\newline
+\newline 
+\Large\textbf{Definition: Likelihood Function}
+\newline Joint pdf/pmf of X considered as a function of $\theta$ keeping the data X fixed.
+\newline
+\newline $\mathcal{L}$($\theta$) = $\displaystyle\prod_{n=1}^{n} f_\theta$(x$_i$)  =  f( x$_1$,x$_2$,...x$_n$ ; $\hat\theta$) = f(x$_1$,$\hat\theta$)f(x$_2$,$\hat\theta$)...f(x$_n$,$\hat\theta$)
+\newline
+\newline vary $\theta$ to find value that maximizes product, this value for $\theta$ is known as MLE.
+\newline
+\newline
+\Large\textbf{Definition: Maximum Likelihood Estimator}
+\newline The Maximum Likelihood Estimator (MLE) of $\theta$ is the value $\theta$ that maximizes the Likelihood function $\mathcal{L}$($\theta$).
+\begin{itemize}
+	\item Complete  data is always sufficient.
+	\item Value of $\theta$ that maximizes $\mathcal{L}$($\theta$) also maximizes $\log\mathcal{L}$($\theta$)/$\ln\mathcal{L}$($\theta$). 	
+	\item First Derivative: $\dfrac{\partial\mathcal{L}(\theta)  }{\partial\theta} \implies$ Critical Points (Max/Min)
+	\item Second Derivative: $\dfrac{\partial^2\mathcal{L}(\theta)  }{\partial\theta^2} < $ 0 $\implies$  Maximum exits.\newline
+\end{itemize}
+\Large\textbf{Log-Likelihood Function $\log\mathcal{L}$($\theta$)/$\ln\mathcal{L}$($\theta$)}
+\newline Because log/ln is a monotone function, if we \textbf{\textit{maximize log-Likelihood it is the same as maximizing Likelihood.} } The reason why  because \ul{$\log\mathcal{L}$($\theta$)/$\ln\mathcal{L}$($\theta$) is used because taking the derivative is much easier.}
+\begin{itemize}
+	\item $\log(ab)$ = $\log(a)$ + $\log(b)$
+	\newline Ex: $f(x) = \displaystyle\prod_{n=1}^{n}g(x) \implies \ln{f(x)} =  \sum_{n=1}^{n} \ln g(x)$ 
+	 \newline You go from taking derivatives of a product rule to taking derivatives of the sum of  individual elements.
+\end{itemize}
+
+\newpage
+\Large\textbf{Properties of a Maximum Likelihood Estimator}
+\begin{itemize}
+	\item $\hat\theta_{MLE}$ is always a function of sufficient statistics whenever they exist.
+	\item Optimal when n is large.
+	\item May not be good when the distribution assumptions are wrong.
+	\item $\hat\theta_{MLE} \in \Theta$ (MLE is included in parameter space)
+	\item $\hat\theta_{MLE}$ has invariance property:
+	\newline\Large\rule{7cm}{0pt} $\hat\theta$ is MLE for $\theta$ 
+	\newline\Large\rule{8cm}{0pt} $\iff$ 
+	\newline\Large\rule{7cm}{0pt} $\hat\theta^2$ is MLE for $\theta^2$ 
+	\newline\Large\rule{8cm}{0pt} $\iff$ 
+	\newline\Large\rule{8cm}{0pt} ........
+\end{itemize}
+
+\newpage
+\section{Chapter number - Chapter Name}
+\Large\textbf{Theorem number: Theorem Name}
+
+
+
+
+
+
+\end{document}
