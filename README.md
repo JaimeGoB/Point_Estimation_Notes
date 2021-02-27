@@ -27,3 +27,10 @@ These notes were made by me using LaTex. They summarize most important theorems 
   <img src="https://github.com/JaimeGoB/Mathmatical_Statistics_Notes/blob/main/documentation/10.8.1.png">
   <img src="https://github.com/JaimeGoB/Mathmatical_Statistics_Notes/blob/main/documentation/10.8.2.png">
 </p>
+
+## Bayesian Inference
+<p>
+  <img src="https://github.com/JaimeGoB/Mathmatical_Statistics_Notes/blob/main/documentation/10.9.0.png">
+  <img src="https://github.com/JaimeGoB/Mathmatical_Statistics_Notes/blob/main/documentation/10.9.1.png">
+  <img src="https://github.com/JaimeGoB/Mathmatical_Statistics_Notes/blob/main/documentation/10.9.2.png">
+</p>
