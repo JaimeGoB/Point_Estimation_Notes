@@ -117,16 +117,16 @@ The efficiency(gain) is reduced as sample size ${n\to\infty}$. For huge sample s
 \newline
 \Large It is possible to obtain a lower bound on the variance of all \textbf{\textit{unbiased estimators}} $\theta$.
 \begin{itemize}
-	\item $\hat\theta$ be a unbiased estimator 
-	\item f(x, $\theta$) is the probability distribution of random variable x.
+	\item $\hat\theta$ - unbiased estimator of parameter $\theta$, based on a random sample of n observations.
+	\item f(x, $\theta$) is the probability distribution of random variable X.
 	\item n is a random sample size
 \end{itemize}
 \Large The \textbf{\textit{Lower Bound of Variance of an Unbiased Estimator}} is the defined by the Cramer-Rao inequality:
 \newline
-\newline\Large\rule{3cm}{0pt} $Var (\hat\theta) \geq  \dfrac{  1   }{ I (\theta) }$ \Large\rule{1cm}{0pt} where $I (\theta) = nE \left[\left(  \dfrac{  \partial ln f(x)  }{ \partial\theta }    \right)^2 \right] $ 
+\newline\Large\rule{3cm}{0pt} $Var (\hat\theta) \geq  \dfrac{  1   }{ I (\theta) }$ \Large\rule{1cm}{0pt} where $I (\theta) = nE \left[\left(  \dfrac{  \partial  }{ \partial\theta } ln  f(X,\theta)     \right)^2 \right] $ 
 \newline
 \newline
-\newline $I (\theta)$ is the Fisher Information in a random sample of size n and $\dfrac {  \partial ln f(x)  }{ \partial\theta }$ is known as score function. It is the smallest possible value variance can have. 
+\newline $I (\theta)$ is the Fisher Information in a random sample of size n and $ \dfrac{  \partial  }{ \partial\theta } ln  f(X,\theta)$ is known as score function. It is the smallest possible value variance can have. 
 \newline
 \newline
 \textbf{\textit{UMVUE exists when:}}
@@ -205,19 +205,15 @@ The statistic $\hat\theta$ is a sufficient estimator of the parameter $\theta$ \
 \section{Chapter 10.8 - Method of Maximum Likelihood}
 \Large\textbf{Notation}
 \newline X = ( X$_1$,X$_2$,...X$_n$ )  $\stackrel{i.i.d.}{\sim}$ f$_\theta$(x)  \newline Data before observed - r.v.'s with same distribution.
-\newline
 \newline $\theta$ may be a vector, $\theta \in \Theta$
-\newline
-\newline $\Theta$ is parameter space. 
-\newline Ex: parameter space of $\mathcal{N}(\mu,\,\sigma^{2})$ is $-\infty < \mu < \infty$, $-\infty < \sigma^2 < \infty$,
-\newline
-\newline x = (x$_1$,x$_2$,...x$_n$ )   Data that has been observed.
+\newline $\Theta$ is parameter space.  Ex: parameter space of $\mathcal{N}(\mu,\,\sigma^{2})$ is $-\infty < \mu < \infty$, $-\infty < \sigma^2 < \infty$,
+\newline x = (x$_1$,x$_2$,...x$_n$ )   Data that has been observed. (Set of sample elements)
 \newline
 \newline 
 \Large\textbf{Definition: Likelihood Function}
 \newline Joint pdf/pmf of X considered as a function of $\theta$ keeping the data X fixed.
 \newline
-\newline $\mathcal{L}$($\theta$) = $\displaystyle\prod_{n=1}^{n} f_\theta$(x$_i$)  =  f( x$_1$,x$_2$,...x$_n$ ; $\hat\theta$) = f(x$_1$,$\hat\theta$)f(x$_2$,$\hat\theta$)...f(x$_n$,$\hat\theta$)
+\newline $\mathcal{L}$($\theta$) = $\displaystyle\prod_{i=1}^{n} f_\theta$(x$_i$)  =  f( x$_1$,x$_2$,...x$_n$ ; $\hat\theta$) = f(x$_1$,$\hat\theta$)f(x$_2$,$\hat\theta$)...f(x$_n$,$\hat\theta$)
 \newline
 \newline vary $\theta$ to find value that maximizes product, this value for $\theta$ is known as MLE.
 \newline
@@ -228,13 +224,14 @@ The statistic $\hat\theta$ is a sufficient estimator of the parameter $\theta$ \
 	\item Complete  data is always sufficient.
 	\item Value of $\theta$ that maximizes $\mathcal{L}$($\theta$) also maximizes $\log\mathcal{L}$($\theta$)/$\ln\mathcal{L}$($\theta$). 	
 	\item First Derivative: $\dfrac{\partial\mathcal{L}(\theta)  }{\partial\theta} \implies$ Critical Points (Max/Min)
-	\item Second Derivative: $\dfrac{\partial^2\mathcal{L}(\theta)  }{\partial\theta^2} < $ 0 $\implies$  Maximum exits.\newline
+	\item Second Derivative: $\dfrac{\partial^2\mathcal{L}(\theta)  }{\partial\theta^2} < $ 0 $\implies$  Maximum exists.\newline
 \end{itemize}
 \Large\textbf{Log-Likelihood Function log$\mathcal{L}$($\theta$)/ln$\mathcal{L}$($\theta$)}
 \newline Because log/ln is a monotone function, if we \textbf{\textit{maximize log-Likelihood it is the same as maximizing Likelihood.} } The reason why  because \ul{$\log\mathcal{L}$($\theta$)/$\ln\mathcal{L}$($\theta$) is used because taking the derivative is much easier.} When referring to log we mean log$_e$ = ln.
 \begin{itemize}
 	\item $\log(ab)$ = $\log(a)$ + $\log(b)$
-	\newline Ex: $f(x) = \displaystyle\prod_{n=1}^{n}g(x) \implies \ln{f(x)} =  \sum_{n=1}^{n} \ln g(x)$ 
+	\newline Ex: $f(x) = \displaystyle\prod_{i=1}^{n}g(x_i) \implies \ln{f(x)} =  \sum_{i=1}^{n} \ln g(x_i)$ 
+	\newline where x = (x$_1$,x$_2$,...x$_n$ )  Set of sample elements
 \end{itemize}
 This property applies to both log/ln.\textbf{\textit{The inner product can be expressed as a sum of individual elements.}} This comes super handy when taking derivatives.
 
@@ -252,6 +249,103 @@ This property applies to both log/ln.\textbf{\textit{The inner product can be ex
 	\newline\Large\rule{8cm}{0pt} $\iff$ 
 	\newline\Large\rule{8cm}{0pt} ........
 \end{itemize}
+
+
+\newpage
+\section{10.9 Bayesian Inference}
+\Large\textbf{Bayes Rule} \newline
+Conditional probability can be rewritten with a Bayes Rules.
+\newline
+\newline
+P(A $|$ B ) = $\dfrac{P(A \cap B)}{ P(B) }$ = $\dfrac{P( B  |  A) P(A)}{ P(B) }$ 
+\newline
+\newline
+\Large\textbf{Difference Between Classical and Bayesian Approach}
+\newline
+\textbf{Classical Approach:}
+\begin{itemize}
+	\item $\theta$ is a \textul{unknown parameter} and \textit{fixed.}
+	\item Does not have a probability distribution f($\theta$)
+\end{itemize}
+\textbf{Bayesian Approach:}
+\begin{itemize}
+	\item $\theta$ is a \textul{random variable} and \textit{not fixed.}
+	\item Has a probability distribution f($\theta$)
+\end{itemize}
+\textbf{Prior Distribution for $\theta$:}
+\begin{itemize}
+	\item \textul{Denoted f($\theta$) or $\pi$($\theta$)}
+	\item Specified before seeing data.
+	\item \textul{Reflects personal degree of belief about what are the possible values of $\theta$ and how likely they are.}
+	\item Can be discrete or continuous.
+	\item Can be vague: \textit{All values equally likely}
+\end{itemize}
+Let data X = (X$_1$, X$_2$,...,X$_n$) be a random sample from a population. \newline
+The distribution of random variable X , will have a pdf/pmf: f(\textbf{x}$|$$\theta$)  "distribution depends on $\theta$" will have a \textul{\textbf{joint density of likelihood of sample}}  is:
+\newline
+\newline\Large\rule{5cm}{0pt} f(x$_1$, x$_2$,...,x$_n | \theta$) =  f(x$_1 | \theta$)f(x$_2 | \theta$)...f(x$_n | \theta$)
+
+\newpage
+\Large\textbf{Posterior Distribution of $\theta$}
+\newline
+We define posterior distribution of $\theta$ as the \textul{conditional distribution of $\theta$ given the sample results.}
+\newline
+\newline\Large\rule{2.2cm}{0pt}   f($\theta |$ x$_1$, x$_2$,...,x$_n$) = $\dfrac{f(x_1, x_2,...,x_n ; \theta)}{ f(x_1, x_2,...,x_n)} = \dfrac{f(x_1, x_2,...,x_n | \theta)f(\theta)}{ f(x_1, x_2,...,x_n)}$
+\newline
+\newline where,
+\newline
+\newline  \Large\rule{2cm}{0pt}  \textbf{Joint Distribution } \Large\rule{0cm}{0pt} \textbf{Joint Density of } 
+\newline  \Large\rule{2cm}{0pt}  \textbf{of Sample and} $\theta$ \Large\rule{.65cm}{0pt} \textbf{Likelihood of Sample} \Large\rule{0cm}{0pt} \textbf{Prior}
+\newline\Large\rule{2cm}{0pt} $f(x_1, x_2,...,x_n ; \theta)$     \Large\rule{.3cm}{0pt} =   \Large\rule{.5cm}{0pt}  f(x$_1$, x$_2$,...,x$_n | \theta$)  \Large\rule{1.5cm}{0pt}   f($\theta)$ 
+\newline
+\newline \Large\rule{2cm}{0pt}  \textbf{Marginal Distribution of Sample} ( independent of $\theta$)
+\newline  \Large\rule{2cm}{0pt}  Continuous Case:
+\Large\rule{0cm}{0pt}  \[f(x_1, x_2,...,x_n ) =  \int_{-\infty}^{\infty}  f(x_1, x_2,...,x_n | \theta)f(\theta)  \,d\theta \]
+In summary,
+\newline \Large\rule{2.5cm}{0pt} \textit{Posterior Distribution = Likelihood * Prior / Normalizing Constant}
+\newline
+\newline \textul{Posterior Distribution of a parameter can be used to: }
+\begin{itemize}
+	\item make estimates
+	\item make probability statements about the parameter.
+\end{itemize}
+\Large\textbf{Def: Conjugate Family}
+\newline When prior and posterior distribution belong to the same distribution family. 
+\newline
+\newline
+\Large\textbf{NOTES:}
+\begin{itemize}
+	\item Because denominator of Posterior Distribution is a normalizing constant and independent of $\theta$: 
+	\[  \dfrac{1}{f(x_1, x_2,...,x_n )}   \]
+	it is known as \textit{proportional factor} and it \textul{will get absorbed in the} $\propto$ sign. 
+	\newline\newline \textbf{\textul{ We can summarize the Posterior Distribution to:}}
+	\[  f(\theta | x_1, x_2,...,x_n)  \propto f(x_1, x_2,...,x_n | \theta) f( \theta)  \]
+	\Large\rule{3.3cm}{0pt} \textit{Posterior Distribution $\propto$ \Large\rule{.2cm}{0pt}  Likelihood * Prior }
+\end{itemize}
+
+\newpage
+\begin{itemize}
+	\item The Posterior Distribution depends only sufficient statistics. 
+	\newline
+	\newline \Large\rule{1.3cm}{0pt} Let T(x) be a sufficient static for $\theta$ using \textit{factorization theorem} :
+	\[  f(\textbf{x}| \theta  )  =  g(T(\textbf{x}), \theta) h(\textbf{x}) \]
+	\newline \Large\rule{1.3cm}{0pt}  We can conclude: 
+	\[  f(\theta | \textbf{x})  \propto f(\textbf{x} | \theta) f( \theta)  \]
+	\Large\rule{1.3cm}{0pt}\textit{factorization theorem} 
+	\[  f(\theta | \textbf{x})  \propto h(\textbf{x}) g(T(\textbf{x})| \theta)  f( \theta)  \]
+	\Large\rule{1.3cm}{0pt}\textit{h(\textbf{x}) does not depend on $\theta$ so constant gets absorbed in $\propto$}  
+	\[  f(\theta | \textbf{x})  \propto g(T(\textbf{x})| \theta)  f( \theta)  \]
+	$\implies$ f($\theta | \textbf{x} $)  = $f(\theta | T(\textbf{x}))$
+	\newline\newline Beliefs of $\theta$ having observed full data \textbf{x} are same as if we had observed only the sufficient statistic T(\textbf{x}).
+\end{itemize}'
+\newline \Large\textbf{Properties of Bayes Estimator}
+\begin{itemize}
+	\item Depends on Sufficient Statistic.
+	\item Under certain circumstances, as n$\to\infty$ it is equivalent to MLE.
+	\item Effect of prior diminishes as data dominates (n$\to\infty$) .
+	\item Optimal for large n.
+	\item Posterior Distribution can be estimated for non-conjugate priors using Markov Chains or Monte Carlo.
+\end{itemize}'
 
 \newpage
 \section{Chapter number - Chapter Name}
